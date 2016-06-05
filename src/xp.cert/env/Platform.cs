@@ -7,10 +7,18 @@ namespace Xp.Cert.Env
 {
     static class Platform
     {
-        public const string MACOSX = "macosx";
+        public const string MACOSX  = "macosx";
         public const string WINDOWS = "windows";
-        public const string CYGWIN = "cygwin";
-        public const string UNIX = "unix";
+        public const string CYGWIN  = "cygwin";
+        public const string UNIX    = "unix";
+
+        /// <summary>Returns uname.sysname</summary>
+        private static string SysName()
+        {
+            var name = new Utsname();
+            if (0 != Syscall.uname(out name)) return null;
+            return name.sysname;
+        }
 
         /// <summary>Detect OS platform</summary>
         public static string Current()
@@ -25,10 +33,8 @@ namespace Xp.Cert.Env
             }
             else
             {
-                var name = new Utsname();
-                if (0 != Syscall.uname(out name)) return UNIX;
-
-                if (name.sysname == "Darwin")
+                var sysname = SysName();
+                if (sysname == "Darwin")
                 {
                     return MACOSX;
                 }
