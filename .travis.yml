@@ -1,0 +1,5 @@
+language: csharp
+
+script:
+  - mcs -r:Mono.Posix -target:exe -out:cert.exe src/xp.cert/*.cs src/xp.cert/*/*.cs
+  - mono cert.exe up
