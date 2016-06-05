@@ -14,6 +14,17 @@ Mac OS X
 --------
 On Mac OS X, the system keychain is exported. *This needs to be rerun every time Apple updates their OS.*
 
+```sh
+The-Mac:cert thekid$ mono cert.exe up
+@macosx (detected)
+Updating certificates
+
+> From /System/Library/Keychains/SystemRootCertificates.keychain: [.....]
+  211 certificates
+
+Done, /Users/thekid/devel/cert/ca-bundle.crt updated
+```
+
 Cygwin
 ------
 If a Cygwin environment is present, a symlink to `/etc/pki/tls/certs/ca-bundle.crt` is created. This does not need to be re-run except if Cygwin's vendors decide to change this path.
