@@ -22,9 +22,9 @@ Linux systems
 -------------
 A symlink is created to whichever of the following can be found first:
 
-| Path                                | Typical for               |
-| ----------------------------------- | ------------------------- |
-| /etc/ssl/certs/ca-certificates.crt  | Debian/Ubuntu/Gentoo etc. |
-| /etc/pki/tls/certs/ca-bundle.crt    | Fedora/RHEL               |
-| /etc/ssl/ca-bundle.pem"             | OpenSUSE                  |
-| /etc/pki/tls/cacert.pem             | OpenELEC                  |
+| Path                                 | Typical for               |
+| ------------------------------------ | ------------------------- |
+| `/etc/ssl/certs/ca-certificates.crt` | Debian/Ubuntu/Gentoo etc. |
+| `/etc/pki/tls/certs/ca-bundle.crt`   | Fedora/RHEL               |
+| `/etc/ssl/ca-bundle.pem`             | OpenSUSE                  |
+| `/etc/pki/tls/cacert.pem`            | OpenELEC                  |
