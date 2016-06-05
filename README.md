@@ -76,7 +76,7 @@ vagrant@vagrant-ubuntu-vivid-64:~/.xp$ /devel/runners/cert/cert.exe up
 @unix (detected)
 Updating certificates
 
-> Link exists with up-to-date target /etc/ssl/certs/ca-certificates.crt
+> Linked ca-bundle.crt -> /etc/ssl/certs/ca-certificates.crt
   173 certificates
 
 Done, /home/vagrant/.xp/ca-bundle.crt updated
