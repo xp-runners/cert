@@ -10,11 +10,14 @@ namespace Xp.Cert.Commands
     public partial class Update : Command
     {
         private static string[] CA_BUNDLE_LOCATIONS = new string[] {
-            "/etc/ssl/certs/ca-certificates.crt", // Debian/Ubuntu/Gentoo etc.
-            "/etc/pki/tls/certs/ca-bundle.crt",   // Fedora/RHEL
-            "/etc/ssl/ca-bundle.pem",             // OpenSUSE
-            "/etc/pki/tls/cacert.pem"             // OpenELEC
-        };
+            "/etc/ssl/certs/ca-certificates.crt",     // Debian/Ubuntu/Gentoo etc.
+            "/etc/pki/tls/certs/ca-bundle.crt",       // Fedora/RHEL
+            "/etc/ssl/ca-bundle.pem",                 // OpenSUSE
+            "/etc/pki/tls/cacert.pem",                // OpenELEC
+            "/usr/local/share/certs/ca-root-nss.crt", // FreeBSD/DragonFly
+            "/etc/ssl/cert.pem",                      // OpenBSD
+            "/etc/openssl/certs/ca-certificates.crt"  // NetBSD
+         };
 
         /// <summary>On Linux and Un*x systems, search locations, stopping at whichever 
         /// comes first. See https://golang.org/src/crypto/x509/root_linux.go</summary>

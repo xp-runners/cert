@@ -18,15 +18,18 @@ Cygwin
 ------
 If a Cygwin environment is present, a symlink to `/etc/pki/tls/certs/ca-bundle.crt` is created. This does not need to be re-run except if Cygwin's vendors decide to change this path.
 
-Linux systems
--------------
+Linux/UNIX systems
+------------------
 A symlink is created to whichever of the following can be found first:
 
-| Path                                 | Typical for               |
-| ------------------------------------ | ------------------------- |
-| `/etc/ssl/certs/ca-certificates.crt` | Debian/Ubuntu/Gentoo etc. |
-| `/etc/pki/tls/certs/ca-bundle.crt`   | Fedora/RHEL               |
-| `/etc/ssl/ca-bundle.pem`             | OpenSUSE                  |
-| `/etc/pki/tls/cacert.pem`            | OpenELEC                  |
+| Path                                     | Typical for               |
+| ---------------------------------------- | ------------------------- |
+| `/etc/ssl/certs/ca-certificates.crt`     | Debian/Ubuntu/Gentoo etc. |
+| `/etc/pki/tls/certs/ca-bundle.crt`       | Fedora/RHEL               |
+| `/etc/ssl/ca-bundle.pem`                 | OpenSUSE                  |
+| `/etc/pki/tls/cacert.pem`                | OpenELEC                  |
+| `/usr/local/share/certs/ca-root-nss.crt` | FreeBSD/DragonFly         |
+| `/etc/ssl/cert.pem`                      | OpenBSD                   |
+| `/etc/openssl/certs/ca-certificates.crt` | NetBSD                    |
 
 This only needs to be rerun if the OS' vendor decides to change this path.
