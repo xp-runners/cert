@@ -1,7 +1,7 @@
 Certificate management
 ======================
 [![Build Status on TravisCI](https://secure.travis-ci.org/xp-runners/cert.svg)](http://travis-ci.org/xp-runners/cert)
-[![BSD License](https://raw.githubusercontent.com/xp-framework/web/master/static/licence-bsd.png)](https://github.com/xp-runners/cert/blob/master/LICENCE.md)
+[![BSD License](https://raw.githubusercontent.com/xp-framework/web/master/static/licence-bsd.png)](https://github.com/xp-runners/cert/blob/master/LICENSE.md)
 
 
 This tool takes care of creating a standardized `ca-bundle.crt` file for various environments.
