@@ -72,7 +72,7 @@ A symlink is created to whichever of the following can be found first:
 This only needs to be rerun if the OS' vendor decides to change this path.
 
 ```sh
-vagrant@vagrant-ubuntu-vivid-64:~/.xp$ /devel/runners/cert/cert.exe up
+vagrant@ubuntu:~/.xp$ /devel/runners/cert/cert.exe up
 @unix (detected)
 Updating certificates
 
