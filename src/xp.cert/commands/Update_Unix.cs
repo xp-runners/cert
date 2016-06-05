@@ -20,7 +20,7 @@ namespace Xp.Cert.Commands
          };
 
         /// <summary>On Linux and Un*x systems, search locations, stopping at whichever 
-        /// comes first. See https://golang.org/src/crypto/x509/root_linux.go</summary>
+        /// comes first. See https://golang.org/src/crypto/x509/</summary>
         public void Unix(FileInfo bundle)
         {
             var location = CA_BUNDLE_LOCATIONS.FirstOrDefault(File.Exists);
