@@ -1,15 +1,16 @@
 using System;
 
+/// <summary>NOOP Stubs for Windows C# compiler</summary>
 namespace Mono.Unix
 {
-    /// <summary>NOOP Stub for Windows C# compiler</summary>
     public class UnixFileInfo
     {
         public string FullName {
           get { throw new NotImplementedException("FullName"); }
         }
 
-        public UnixFileInfo(string name) {
+        public UnixFileInfo(string name)
+        {
             throw new NotImplementedException("UnixFileInfo");
         }
 
@@ -19,16 +20,37 @@ namespace Mono.Unix
         }
     }
 
-    /// <summary>NOOP Stub for Windows C# compiler</summary>
     public class UnixSymbolicLinkInfo
     {
-        public UnixSymbolicLinkInfo(string name) {
+        public UnixSymbolicLinkInfo(string name)
+        {
             throw new NotImplementedException("UnixSymbolicLinkInfo");
         }
 
         public UnixFileInfo GetContents()
         {
             throw new NotImplementedException("GetContents");
+        }
+    }
+}
+
+namespace Mono.Unix.Native
+{
+    public class Utsname
+    {
+        public string sysname;
+
+        public Utsname()
+        {
+            throw new NotImplementedException("Utsname");
+        }
+    }
+
+    public class Syscall
+    {
+        public static int uname(out Utsname name)
+        {
+            throw new NotImplementedException("uname");
         }
     }
 }

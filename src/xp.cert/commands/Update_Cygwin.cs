@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Xp.Cert;
+using Xp.Cert.Env;
 
 namespace Xp.Cert.Commands
 {

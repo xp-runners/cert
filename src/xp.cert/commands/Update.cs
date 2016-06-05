@@ -3,6 +3,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Xp.Cert;
+using Xp.Cert.Env;
 
 namespace Xp.Cert.Commands
 {
@@ -10,46 +11,16 @@ namespace Xp.Cert.Commands
     {
         const string BUNDLE = "ca-bundle.crt";
 
-        const string MACOSX = "macosx";
-        const string WINDOWS = "windows";
-        const string CYGWIN = "cygwin";
-        const string UNIX = "unix";
-
         const string BEGIN_CERT = "-----BEGIN CERTIFICATE-----";
         const string END_CERT = "-----END CERTIFICATE-----";
 
         private static Dictionary<string, Action<Update, FileInfo>> update = new Dictionary<string, Action<Update, FileInfo>>()
         {
-            { MACOSX, (self, bundle) => self.MacOSX(bundle) },
-            { WINDOWS, (self, bundle) => self.Windows(bundle) },
-            { CYGWIN, (self, bundle) => self.Cygwin(bundle) },
-            { UNIX, (self, bundle) => self.Unix(bundle) }
+            { Platform.MACOSX, (self, bundle) => self.MacOSX(bundle) },
+            { Platform.WINDOWS, (self, bundle) => self.Windows(bundle) },
+            { Platform.CYGWIN, (self, bundle) => self.Cygwin(bundle) },
+            { Platform.UNIX, (self, bundle) => self.Unix(bundle) }
         };
-
-        /// <summary>Detect OS platform</summary>
-        private string CurrentPlatform()
-        {
-            if (Environment.OSVersion.Platform == PlatformID.MacOSX)
-            {
-                return MACOSX;
-            }
-            else if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            {
-                return CygwinEnvironment.Active ? CYGWIN : WINDOWS;
-            }
-            else
-            {
-                var name = new Mono.Unix.Native.Utsname();
-                if (0 != Mono.Unix.Native.Syscall.uname(out name)) return UNIX;
-
-                if (name.sysname == "Darwin")
-                {
-                    return MACOSX;
-                }
-
-                return UNIX;
-            }
-        }
 
         /// <summary>Count certificates in a given bundle</summary>
         protected int CountCertificates(FileInfo bundle)
@@ -80,7 +51,7 @@ namespace Xp.Cert.Commands
             }
             else
             {
-                platform = CurrentPlatform();
+                platform = Platform.Current();
                 Console.WriteLine("@{0} (detected)", platform);
             }
 

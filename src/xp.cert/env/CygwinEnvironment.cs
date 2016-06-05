@@ -5,7 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.Win32;
 
-namespace Xp.Cert.Commands
+namespace Xp.Cert.Env
 {
     static class CygwinEnvironment
     {
