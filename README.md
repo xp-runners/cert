@@ -4,19 +4,19 @@ Certificate management
 [![BSD License](https://raw.githubusercontent.com/xp-framework/web/master/static/licence-bsd.png)](https://github.com/xp-runners/cert/blob/master/LICENSE.md)
 
 
-This tool takes care of creating a standardized `ca-bundle.crt` file for various environments.
+This tool takes care of creating a standardized `ca-bundle.crt` file for various environments. Born to solve [this issue](https://github.com/xp-framework/core/issues/150).
 
 Windows
 -------
-On Windows, the system certificate store is exported. This needs to be rerun every time Microsoft updates their OS.
+On Windows, the system certificate store is exported. *This needs to be rerun every time Microsoft updates their OS.*
 
 Mac OS X
 --------
-On Mac OS X, the system keychain is exported. This needs to be rerun every time Apple updates their OS.
+On Mac OS X, the system keychain is exported. *This needs to be rerun every time Apple updates their OS.*
 
 Cygwin
 ------
-If a Cygwin environment is present, a symlink to `/etc/pki/tls/certs/ca-bundle.crt` is created. This does not need to be re-run except if Cygwin's vendors decide to changes this path.
+If a Cygwin environment is present, a symlink to `/etc/pki/tls/certs/ca-bundle.crt` is created. This does not need to be re-run except if Cygwin's vendors decide to change this path.
 
 Linux systems
 -------------
