@@ -42,6 +42,7 @@ namespace Xp.Cert.Commands
 
                     Console.WriteLine("]");
                     Console.WriteLine("  {0} certificates", count);
+                    Console.WriteLine();
                 }
             }
             finally
