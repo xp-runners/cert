@@ -48,8 +48,8 @@ If a Cygwin environment is present, a symlink to `/etc/pki/tls/certs/ca-bundle.c
 
 ```sh
 Timm@slate ~/devel/runners/cert [master]
-$ ./cert.exe up cygwin
-@cygwin (specified via command line)
+$ ./cert.exe up
+@cygwin (detected)
 Updating certificates
 
 > Linked ca-bundle.crt -> /etc/pki/tls/certs/ca-bundle.crt
