@@ -39,6 +39,14 @@ namespace Xp.Cert.Commands
             }
             else
             {
+                var name = new Mono.Unix.Native.Utsname();
+                if (0 != Mono.Unix.Native.Syscall.uname(out name)) return UNIX;
+
+                if (name.sysname == "Darwin")
+                {
+                    return MACOSX;
+                }
+
                 return UNIX;
             }
         }
