@@ -10,6 +10,23 @@ Windows
 -------
 On Windows, the system certificate store is exported. *This needs to be rerun every time Microsoft updates their OS.*
 
+```sh
+C:\tools\cygwin\home\Timm\devel\runners\cert>cert.exe up
+@windows (detected)
+Updating certificates
+
+> From Root: [.....................................................]
+  53 certificates
+
+> From AuthRoot: [............................................]
+  44 certificates
+
+> From CertificateAuthority: [..........................]
+  26 certificates
+
+Done, C:\tools\cygwin\home\Timm\devel\runners\cert\ca-bundle.crt updated
+```
+
 Mac OS X
 --------
 On Mac OS X, the system keychain is exported. *This needs to be rerun every time Apple updates their OS.*
@@ -29,6 +46,18 @@ Cygwin
 ------
 If a Cygwin environment is present, a symlink to `/etc/pki/tls/certs/ca-bundle.crt` is created. This does not need to be re-run except if Cygwin's vendors decide to change this path.
 
+```sh
+Timm@slate ~/devel/runners/cert [master]
+$ ./cert.exe up cygwin
+@cygwin (specified via command line)
+Updating certificates
+
+> Linked ca-bundle.crt -> /etc/pki/tls/certs/ca-bundle.crt
+  169 certificates
+
+Done, C:\tools\cygwin\home\Timm\devel\runners\cert\ca-bundle.crt updated
+```
+
 Linux systems
 -------------
 A symlink is created to whichever of the following can be found first:
@@ -41,3 +70,14 @@ A symlink is created to whichever of the following can be found first:
 | `/etc/pki/tls/cacert.pem`            | OpenELEC                  |
 
 This only needs to be rerun if the OS' vendor decides to change this path.
+
+```sh
+vagrant@vagrant-ubuntu-vivid-64:~/.xp$ /devel/runners/cert/cert.exe up
+@unix (detected)
+Updating certificates
+
+> Link exists with up-to-date target /etc/ssl/certs/ca-certificates.crt
+  173 certificates
+
+Done, /home/vagrant/.xp/ca-bundle.crt updated
+```
