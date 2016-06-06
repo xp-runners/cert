@@ -6,6 +6,24 @@ Certificate management
 
 This tool takes care of creating a standardized `ca-bundle.crt` file for various environments. Born to solve [this issue](https://github.com/xp-framework/core/issues/150).
 
+Usage
+-----
+Update the `ca-bundle.crt` file in the current directory:
+
+```sh
+vagrant@virtualbox ~/.xp
+$ cert up
+@unix (detected)
+Updating certificates
+
+> Linked ca-bundle.crt -> /etc/ssl/certs/ca-certificates.crt
+  173 certificates
+
+Done, /home/vagrant/.xp/ca-bundle.crt updated
+```
+
+Depending on the underlying operating system and runtime environment, the action to create the file may be different. For details, see below:
+
 Windows
 -------
 On Windows, the system certificate store is exported. *This needs to be rerun every time Microsoft updates their OS.*
